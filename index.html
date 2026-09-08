@@ -94,8 +94,24 @@
     color:var(--muted);
     margin-bottom:6px;
   }
-  .row-meta .tag{
-    color:var(--red);
+  .status{
+    display:inline-block;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:999px;
+    margin-left:8px;
+    vertical-align:middle;
+  }
+  .status.approved{
+    background:var(--navy);
+    color:#ffffff;
+  }
+  .status.draft{
+    background:#eef0f4;
+    color:#9a9fb3;
   }
   .row-title{
     font-size:17px;
@@ -159,7 +175,7 @@
 
         <a class="row" href="newsletter-september.html">
           <div class="row-main">
-            <p class="row-meta">September 2026</p>
+            <p class="row-meta">September 2026 <span class="status draft">Draft</span></p>
             <p class="row-title">The Breather Your AC Earned</p>
             <p class="row-desc">Your AC just ran a full Phoenix summer without a day off — how to thank it, plus the 0% financing deadline worth knowing about.</p>
           </div>
@@ -168,7 +184,7 @@
 
         <a class="row" href="newsletter-august.html">
           <div class="row-main">
-            <p class="row-meta">August 2026</p>
+            <p class="row-meta">August 2026 <span class="status draft">Draft</span></p>
             <p class="row-title">Ductless Mini Split Installation</p>
             <p class="row-desc">Every house has one room the AC can't win. The fix for garages, bedrooms, and additions that doesn't need a single new duct.</p>
           </div>
@@ -177,7 +193,7 @@
 
         <a class="row" href="newsletter-july.html">
           <div class="row-main">
-            <p class="row-meta">July 2026</p>
+            <p class="row-meta">July 2026 <span class="status draft">Draft</span></p>
             <p class="row-title">Peak Summer AC Survival Guide</p>
             <p class="row-desc">Your AC is running a marathon right now. Four quick checks to help it survive peak Phoenix summer heat.</p>
           </div>
@@ -193,7 +209,7 @@
 
         <a class="row" href="campaign-iaq-DRAFT.html">
           <div class="row-main">
-            <p class="row-meta">September 2026 &nbsp;·&nbsp; <span class="tag">Draft</span></p>
+            <p class="row-meta">September 2026 <span class="status draft">Draft</span></p>
             <p class="row-title">Indoor Air Quality — Post-Monsoon</p>
             <p class="row-desc">This monsoon season left more than dirt on your car. What it left in your ductwork — and what actually fixes it.</p>
           </div>
