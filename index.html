@@ -9,13 +9,10 @@
   :root{
     --navy:#27316F;
     --red:#951F21;
-    --gold:#FFB300;
-    --blue:#6C97C4;
-    --bg:#f4f5fa;
     --ink:#1c2340;
-    --muted:#5b6280;
-    --card:#ffffff;
-    --ring:#e4e7f2;
+    --muted:#6b7189;
+    --line:#e7e8f0;
+    --bg:#ffffff;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -26,358 +23,192 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* Header */
-  .hero{
-    background:linear-gradient(135deg, var(--navy) 0%, #1b2354 100%);
-    color:#fff;
-    padding:56px 24px 84px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";
-    position:absolute;
-    right:-80px; top:-80px;
-    width:260px; height:260px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(255,179,0,0.35) 0%, rgba(255,179,0,0) 70%);
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    left:-60px; bottom:-100px;
-    width:220px; height:220px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(108,151,196,0.4) 0%, rgba(108,151,196,0) 70%);
-  }
-  .hero-inner{
-    max-width:1040px;
-    margin:0 auto;
-    position:relative;
-    z-index:1;
-  }
-  .brand-row{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:26px;
-  }
-  .brand-mark{
-    width:38px;height:38px;border-radius:9px;
-    background:var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    font-weight:800;color:var(--navy);font-size:18px;
-    flex:none;
-  }
-  .brand-name{
-    font-size:15px;
-    letter-spacing:.4px;
-    font-weight:700;
-    color:#eef1fb;
-    text-transform:uppercase;
-  }
-  .hero h1{
-    margin:0 0 12px;
-    font-size:38px;
-    line-height:1.15;
-    font-weight:800;
-    max-width:640px;
-  }
-  .hero p{
-    margin:0;
-    color:#c9d0ee;
-    font-size:16px;
-    line-height:1.6;
-    max-width:560px;
-  }
-
-  /* Layout */
   .wrap{
-    max-width:1040px;
-    margin:-48px auto 0;
-    padding:0 24px 64px;
-    position:relative;
-    z-index:2;
+    max-width:720px;
+    margin:0 auto;
+    padding:64px 24px 80px;
   }
 
-  .section-label{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:44px 0 18px;
-    color:var(--navy);
-    font-size:13px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:.6px;
+  header{
+    margin-bottom:56px;
   }
-  .section-label:first-child{margin-top:0;}
-  .section-label .line{
-    flex:1;
-    height:1px;
-    background:var(--ring);
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
-  @media (max-width:900px){
-    .grid{grid-template-columns:repeat(2, 1fr);}
-  }
-  @media (max-width:620px){
-    .grid{grid-template-columns:1fr;}
-    .hero h1{font-size:28px;}
-  }
-
-  .card{
-    background:var(--card);
-    border-radius:16px;
-    border:1px solid var(--ring);
-    box-shadow:0 10px 24px -18px rgba(20,26,60,0.35);
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 34px -18px rgba(20,26,60,0.45);
-  }
-  .card-top{
-    height:6px;
-    background:linear-gradient(90deg, var(--gold), var(--red));
-  }
-  .card-top.draft{
-    background:repeating-linear-gradient(45deg, var(--red), var(--red) 8px, #c94446 8px, #c94446 16px);
-  }
-  .card-body{
-    padding:22px 22px 20px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-  }
-  .badge-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:14px;
-  }
-  .month-badge{
-    display:inline-block;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:.5px;
-    text-transform:uppercase;
-    color:var(--navy);
-    background:#eef1fb;
-    padding:5px 10px;
-    border-radius:999px;
-  }
-  .status-badge{
-    display:inline-block;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:.6px;
-    text-transform:uppercase;
-    padding:4px 9px;
-    border-radius:999px;
-  }
-  .status-badge.sent{
-    color:#146c2e;
-    background:#e5f6ea;
-  }
-  .status-badge.draft{
-    color:var(--red);
-    background:#fbe9e9;
-  }
-  .card h2{
-    margin:0 0 8px;
-    font-size:19px;
-    line-height:1.3;
-    font-weight:800;
-    color:var(--navy);
-  }
-  .theme-tag{
-    font-size:12.5px;
+  .eyebrow{
+    font-size:12px;
     font-weight:700;
+    letter-spacing:.6px;
+    text-transform:uppercase;
     color:var(--red);
     margin:0 0 10px;
   }
-  .card p.desc{
-    margin:0 0 18px;
+  h1{
+    margin:0 0 10px;
+    font-size:30px;
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:-.2px;
+  }
+  header p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--muted);
+    max-width:480px;
+  }
+
+  .section-title{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 4px;
+  }
+  .section{
+    margin-bottom:48px;
+  }
+
+  .list{
+    border-top:1px solid var(--line);
+  }
+  .row{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+  }
+  .row:hover .row-title{
+    color:var(--red);
+  }
+  .row-main{
+    min-width:0;
+  }
+  .row-meta{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .row-meta .tag{
+    color:var(--red);
+  }
+  .row-title{
+    font-size:17px;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 5px;
+    transition:color .12s ease;
+  }
+  .row-desc{
     font-size:13.5px;
     line-height:1.55;
     color:var(--muted);
-    flex:1;
+    margin:0;
+    max-width:480px;
   }
-  .subject-block{
-    background:#f8f9fd;
-    border:1px dashed var(--ring);
-    border-radius:10px;
-    padding:10px 12px;
-    margin-bottom:18px;
+  .row-arrow{
+    flex:none;
+    color:var(--muted);
+    font-size:18px;
+    line-height:1;
+    padding-top:2px;
   }
-  .subject-block .label{
-    font-size:10px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    color:#8890ac;
-    margin-bottom:4px;
-  }
-  .subject-block .subj{
-    font-size:12.5px;
-    color:var(--ink);
-    line-height:1.4;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:14px;
-    padding:11px 16px;
-    border-radius:10px;
-    background:var(--navy);
-    color:#fff;
-    transition:background .15s ease;
-  }
-  .btn:hover{background:#1b2354;}
-  .btn.outline{
-    background:transparent;
+  .row:hover .row-arrow{
     color:var(--red);
-    border:1.5px solid var(--red);
   }
-  .btn.outline:hover{background:var(--red);color:#fff;}
-  .btn svg{flex:none;}
 
   footer{
-    max-width:1040px;
-    margin:0 auto;
-    padding:0 24px 40px;
-    text-align:center;
-    color:#8890ac;
+    padding-top:8px;
+    border-top:1px solid var(--line);
+    color:var(--muted);
     font-size:12.5px;
     line-height:1.7;
   }
-  footer a{color:var(--navy);text-decoration:none;font-weight:700;}
+  footer a{
+    color:var(--navy);
+    text-decoration:none;
+    font-weight:700;
+  }
+
+  @media (max-width:520px){
+    .wrap{padding:44px 20px 60px;}
+    h1{font-size:25px;}
+    .row{flex-direction:column;gap:6px;}
+    .row-arrow{display:none;}
+  }
 </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="brand-row">
-        <div class="brand-mark">C1</div>
-        <div class="brand-name">Comfort One Air Conditioning</div>
-      </div>
-      <h1>Newsletter &amp; Campaign Hub</h1>
-      <p>Every Comfort One Connect monthly newsletter and seasonal campaign email in one place. Pick a month below to open the full HTML preview.</p>
-    </div>
-  </div>
-
   <div class="wrap">
 
-    <div class="section-label"><span>Monthly Newsletters</span><span class="line"></span></div>
-    <div class="grid">
+    <header>
+      <p class="eyebrow">Comfort One Air Conditioning</p>
+      <h1>Newsletter &amp; Campaign Hub</h1>
+      <p>Every Comfort One Connect monthly newsletter and seasonal campaign email, in one place. Select one below to open the full preview.</p>
+    </header>
 
-      <a class="card" href="newsletter-september.html" style="text-decoration:none;color:inherit;">
-        <div class="card-top"></div>
-        <div class="card-body">
-          <div class="badge-row">
-            <span class="month-badge">September 2026</span>
-            <span class="status-badge sent">Ready</span>
-          </div>
-          <h2>Comfort One Connect</h2>
-          <div class="theme-tag">The Breather Your AC Earned</div>
-          <p class="desc">Your AC just ran a full Phoenix summer without a day off. How to thank it — plus the 0% financing deadline worth knowing about.</p>
-          <div class="subject-block">
-            <div class="label">Subject line (A/B)</div>
-            <div class="subj">😮‍💨 Your AC just survived summer. Here's its reward.</div>
-          </div>
-          <span class="btn">View Newsletter
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </div>
-      </a>
+    <div class="section">
+      <p class="section-title">Monthly Newsletters</p>
+      <div class="list">
 
-      <a class="card" href="newsletter-august.html" style="text-decoration:none;color:inherit;">
-        <div class="card-top"></div>
-        <div class="card-body">
-          <div class="badge-row">
-            <span class="month-badge">August 2026</span>
-            <span class="status-badge sent">Sent</span>
+        <a class="row" href="newsletter-september.html">
+          <div class="row-main">
+            <p class="row-meta">September 2026</p>
+            <p class="row-title">The Breather Your AC Earned</p>
+            <p class="row-desc">Your AC just ran a full Phoenix summer without a day off — how to thank it, plus the 0% financing deadline worth knowing about.</p>
           </div>
-          <h2>Comfort One Connect</h2>
-          <div class="theme-tag">Ductless Mini Split Installation</div>
-          <p class="desc">Every house has one room the AC can't win. The fix for garages, bedrooms, and additions that doesn't need a single new duct.</p>
-          <div class="subject-block">
-            <div class="label">Subject line (A/B)</div>
-            <div class="subj">🧊 The room your AC gave up on (there's a fix)</div>
-          </div>
-          <span class="btn">View Newsletter
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </div>
-      </a>
+          <span class="row-arrow">&rarr;</span>
+        </a>
 
-      <a class="card" href="newsletter-july.html" style="text-decoration:none;color:inherit;">
-        <div class="card-top"></div>
-        <div class="card-body">
-          <div class="badge-row">
-            <span class="month-badge">July 2026</span>
-            <span class="status-badge sent">Sent</span>
+        <a class="row" href="newsletter-august.html">
+          <div class="row-main">
+            <p class="row-meta">August 2026</p>
+            <p class="row-title">Ductless Mini Split Installation</p>
+            <p class="row-desc">Every house has one room the AC can't win. The fix for garages, bedrooms, and additions that doesn't need a single new duct.</p>
           </div>
-          <h2>Comfort One Connect</h2>
-          <div class="theme-tag">Peak Summer AC Survival Guide</div>
-          <p class="desc">Your AC is running a marathon right now. Four quick checks to help it survive peak Phoenix summer heat.</p>
-          <div class="subject-block">
-            <div class="label">Subject line (A/B)</div>
-            <div class="subj">🌡️ How to help your AC survive 115° days</div>
-          </div>
-          <span class="btn">View Newsletter
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </div>
-      </a>
+          <span class="row-arrow">&rarr;</span>
+        </a>
 
+        <a class="row" href="newsletter-july.html">
+          <div class="row-main">
+            <p class="row-meta">July 2026</p>
+            <p class="row-title">Peak Summer AC Survival Guide</p>
+            <p class="row-desc">Your AC is running a marathon right now. Four quick checks to help it survive peak Phoenix summer heat.</p>
+          </div>
+          <span class="row-arrow">&rarr;</span>
+        </a>
+
+      </div>
     </div>
 
-    <div class="section-label"><span>Seasonal Campaigns</span><span class="line"></span></div>
-    <div class="grid">
+    <div class="section">
+      <p class="section-title">Seasonal Campaigns</p>
+      <div class="list">
 
-      <a class="card" href="campaign-iaq-DRAFT.html" style="text-decoration:none;color:inherit;">
-        <div class="card-top draft"></div>
-        <div class="card-body">
-          <div class="badge-row">
-            <span class="month-badge">September 2026</span>
-            <span class="status-badge draft">Draft</span>
+        <a class="row" href="campaign-iaq-DRAFT.html">
+          <div class="row-main">
+            <p class="row-meta">September 2026 &nbsp;·&nbsp; <span class="tag">Draft</span></p>
+            <p class="row-title">Indoor Air Quality — Post-Monsoon</p>
+            <p class="row-desc">This monsoon season left more than dirt on your car. What it left in your ductwork — and what actually fixes it.</p>
           </div>
-          <h2>Indoor Air Quality</h2>
-          <div class="theme-tag">Post-Monsoon Air Quality Campaign</div>
-          <p class="desc">This monsoon season left more than dirt on your car. What it left in your ductwork — and what actually fixes it.</p>
-          <div class="subject-block">
-            <div class="label">Subject line (A/B)</div>
-            <div class="subj">🌫️ That dust isn't just outside anymore</div>
-          </div>
-          <span class="btn outline">View Draft
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </div>
-      </a>
+          <span class="row-arrow">&rarr;</span>
+        </a>
 
+      </div>
     </div>
+
+    <footer>
+      Internal preview hub for Comfort One email marketing assets · Not for public distribution<br>
+      <a href="https://www.comfort1ac.com/" target="_blank" rel="noopener">comfort1ac.com</a>
+    </footer>
 
   </div>
-
-  <footer>
-    Internal preview hub for Comfort One email marketing assets · Not for public distribution<br>
-    <a href="https://www.comfort1ac.com/" target="_blank" rel="noopener">comfort1ac.com</a>
-  </footer>
 
 </body>
 </html>
